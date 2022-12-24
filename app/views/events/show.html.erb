@@ -1,0 +1,25 @@
+<div class="event">
+  <div class="event-info row">
+    <div class="col-md-12">
+      <%= content_tag 'div', '', class: 'event-background event-background-blur',
+        style: "background-image: url(#{asset_path('event.jpg')})" %>
+      <div class="event-info-inner row">
+        <div class="col-md-6">
+          <div class="event-description">
+            <h1><%= @event.title %></h1>
+            <h3><%= @event.datetime %></h3>
+            <h3>
+              <small><%= link_to @event.address, "https://yandex.ru/maps/?text=#{@event.address}" %></small>
+            </h3>
+            <p><%= @event.description %></p>
+          </div>
+          <% if current_user_can_edit?(@event) %>
+            <div class="buffer-top mb-3">
+              <%= link_to 'Изменить', edit_event_path(@event), class: 'btn btn-primary mb' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
