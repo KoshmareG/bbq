@@ -1,6 +1,6 @@
 <% errors = model.errors %>
 <% if errors.any? %>
-  <div class="alert alert-danger pb-0">
+  <div class="alert alert-danger alert-dismissible fade show pb-0" role="alert">
     <div class="fs-6">
       <p><%= errors.count %> ошибок</p>
       <ul>
@@ -9,5 +9,6 @@
         <% end %>
       </ul>
     </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% end %>

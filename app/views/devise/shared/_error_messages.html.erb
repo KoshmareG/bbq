@@ -1,5 +1,5 @@
 <% if resource.errors.any? %>
-  <div class="alert alert-danger pb-0" id="error_explanation">
+  <div class="alert alert-danger alert-dismissible fade show pb-0" id="error_explanation" role="alert">
     <p>
       <%= I18n.t("errors.messages.not_saved",
                  count: resource.errors.count,
@@ -11,5 +11,6 @@
         <li class="fs-6 fw-light"><%= message %></li>
       <% end %>
     </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% end %>
