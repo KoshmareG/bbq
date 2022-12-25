@@ -1,4 +1,4 @@
-<%= form_with model: event, data: {turbo: false} do |form| %>
+<%= form_with model: event do |form| %>
   <%= render partial: 'partials/form_errors', locals: {model: event} %>
   <div class="mb-3">
     <%= form.label :title, 'Название', class: 'form-label' %>
