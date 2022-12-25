@@ -1,11 +1,11 @@
 <% errors = model.errors %>
 <% if errors.any? %>
-  <div class="alert alert-danger alert-dismissible fade show pb-0" role="alert">
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
     <div class="fs-6">
-      <p><%= errors.count %> ошибок</p>
-      <ul>
+      <p class="fw-bold mb-0"><%= t(:errors, count: errors.count) %></p>
+      <ul class="list-group list-group-flush">
         <% errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li class="list-group-item list-group-item-danger"><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>

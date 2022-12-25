@@ -22,3 +22,7 @@ ru:
       updated: 'Ваши данные обновлены'
   app:
     name: 'Шашлыки'
+  errors:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'
