@@ -18,11 +18,20 @@ ru:
     events:
       created: 'Событие создано'
       updated: 'Событие изменено'
+      deleted: 'Событие удалено'
     users:
       updated: 'Ваши данные обновлены'
   app:
     name: 'Шашлыки'
+  global:
+    change: 'Изменить'
+    cancel: 'Отмена'
+    delete: 'Удалить'
   errors:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
     many: '%{count} ошибок'
+  event:
+    delete_event: 'Удалить событие'
+    are_you_sure: 'Вы дейтсительно хотите удалить событие?'
+

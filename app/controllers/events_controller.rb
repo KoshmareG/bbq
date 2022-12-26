@@ -37,6 +37,8 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
+
+    redirect_to user_path(current_user), notice: I18n.t('controllers.events.deleted')
   end
 
   private

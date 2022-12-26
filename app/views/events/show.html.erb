@@ -14,8 +14,11 @@
             <p><%= @event.description %></p>
           </div>
           <% if current_user_can_edit?(@event) %>
-            <div class="buffer-top mb-3">
-              <%= link_to 'Изменить', edit_event_path(@event), class: 'btn btn-primary mb' %>
+            <div class="mt-3 mb-3">
+              <%= link_to t('global.change'), edit_event_path(@event), class: 'btn btn-primary mb me-3' %>
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteEventModal">
+                <%= t('global.delete') %>
+              </button>
             </div>
           <% end %>
         </div>
@@ -23,3 +26,4 @@
     </div>
   </div>
 </div>
+<%= render 'delete_event', event: @event %>
