@@ -1,0 +1,17 @@
+<div class="modal fade" id="deleteUserModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="ModalLabel">Удаление аккаунта</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-0">Вы действительно хотите удалить аккаунт?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Отмена</button>
+        <%= button_to 'Удалить аккаунт', registration_path(resource_name), method: :delete, class: 'btn btn-sm btn-danger' %>
+      </div>
+    </div>
+  </div>
+</div>

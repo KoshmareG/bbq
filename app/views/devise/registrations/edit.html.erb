@@ -32,10 +32,11 @@
     </div>
     <div class="row">
       <div class="col-12 text-center mt-3 mb-3">
-        <%= button_to 'Удалить аккаунт', registration_path(resource_name), method: :delete,
-          form: {data: {turbo_confirm: 'Вы действительно хотите удалить аккаунт?'}},
-          class: 'link-danger tr-btn text-decoration-none' %>
+        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
+          Удалить аккаунт
+        </button>
       </div>
     </div>
   </div>
 </div>
+<%= render 'delete_user' %>
