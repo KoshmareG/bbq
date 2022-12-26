@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-4 col-md-6 col-12 offset-lg-4 offset-md-3">
-    <h1>Забыли пароль?</h1>
+    <h1><%= t('user.forgot_password') %></h1>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), data: {turbo: false}, html: { method: :post }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="mb-3">
@@ -10,17 +10,17 @@
       <div class="mb-3">
         <div class="mb-3">
           <div class="d-grid gap-2">
-            <%= f.submit 'Сбрость пароль', class: 'btn btn-primary' %>
+            <%= f.submit t('user.reset_password'), class: 'btn btn-primary' %>
           </div>
         </div>
       </div>
     <% end %>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-12 text-center mb-3">
-        <%= link_to 'Вход', new_user_session_path, class: 'text-decoration-none' %>
+        <%= link_to t('global.sign_in'), new_user_session_path, class: 'text-decoration-none' %>
       </div>
       <div class="col-lg-6 col-md-6 col-12 text-center">
-        <%= link_to 'Регистрация', new_user_registration_path, class: 'text-decoration-none' %>
+        <%= link_to t('global.registration'), new_user_registration_path, class: 'text-decoration-none' %>
       </div>
     </div>
   </div>

@@ -21,17 +21,17 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to 'Профиль', current_user, class: 'nav-link active' %>
+                <%= link_to t('global.profile'), current_user, class: 'nav-link active' %>
               </li>
               <li class="nav-item">
-                <%= button_to 'Выйти', destroy_user_session_path, method: :delete, class: 'nav-link active tr-btn' %>
+                <%= button_to t('global.sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link active tr-btn' %>
               </li>
             <% else %>
               <li class="nav-item">
-                <%= link_to 'Вход', new_user_session_path, class: 'nav-link active' %>
+                <%= link_to t('global.sign_in'), new_user_session_path, class: 'nav-link active' %>
               </li>
               <li class="nav-item">
-                <%= link_to 'Регистрация', new_user_registration_path, class: 'nav-link active' %>
+                <%= link_to t('global.registration'), new_user_registration_path, class: 'nav-link active' %>
               </li>
             <% end %>
           </ul>

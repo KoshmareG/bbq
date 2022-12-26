@@ -8,32 +8,32 @@
         <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
       </div>
       <div class="mb-3">
-        <%= f.label :password, 'Новый пароль', class: 'form-label' %>
+        <%= f.label :password, class: 'form-label' %>
         <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
-        <p class="form-text">Оставьте пустым если не хотите изменять пароль</p>
+        <p class="form-text"><%= t('user.leave_blank') %></p>
       </div>
       <div class="mb-3">
-        <%= f.label :password_confirmation, 'Повторите пароль', class: 'form-label' %>
+        <%= f.label :password_confirmation, class: 'form-label' %>
         <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control' %>
       </div>
       <div class="mb-3">
-        <%= f.label :current_password, 'Старый пароль', class: 'form-label' %>
+        <%= f.label :current_password, class: 'form-label' %>
         <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
-        <p class="form-text">Необходимо заполнить для приминения изминений</p>
+        <p class="form-text"><%= t('user.need_to_fill') %></p>
       </div>
       <div class="d-grid gap-2 mb-3">
-        <%= f.submit 'Изменить', class: 'btn btn-primary' %>
+        <%= f.submit t('global.save'), class: 'btn btn-primary' %>
       </div>
     <% end %>
     <div class="row">
       <div class="col-12 text-center mb-3">
-        <%= link_to 'Вернуться', :back, class: 'text-decoration-none' %>
+        <%= link_to t('global.back'), :back, class: 'text-decoration-none' %>
       </div>
     </div>
     <div class="row">
       <div class="col-12 text-center mt-3 mb-3">
         <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUserModal">
-          Удалить аккаунт
+          <%= t('user.delete_user') %>
         </button>
       </div>
     </div>

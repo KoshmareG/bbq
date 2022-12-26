@@ -1,7 +1,7 @@
 <%= form_with model: user do |form| %>
   <%= render partial: 'partials/form_errors', locals: { model: @user } %>
   <div class="mb-3">
-    <%= form.label :name, 'Имя', class: 'form-label' %>
+    <%= form.label :name, class: 'form-label' %>
     <%= form.text_field :name, class: 'form-control' %>
   </div>
   <div class="mb-3">
@@ -10,7 +10,7 @@
   </div>
   <div class="mb-3">
     <div class="d-grid gap-2">
-      <%= form.submit 'Сохранить', class: 'btn btn-primary' %>
+      <%= form.submit t('global.save'), class: 'btn btn-primary' %>
     </div>
   </div>
 <% end %>

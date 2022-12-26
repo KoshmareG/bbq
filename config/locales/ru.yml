@@ -27,6 +27,12 @@ ru:
     change: 'Изменить'
     cancel: 'Отмена'
     delete: 'Удалить'
+    save: 'Сохранить'
+    back: 'Вернуться'
+    sign_in: 'Вход'
+    sign_out: 'Выйти'
+    profile: 'Профиль'
+    registration: 'Регистрация'
   errors:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
@@ -34,4 +40,18 @@ ru:
   event:
     delete_event: 'Удалить событие'
     are_you_sure: 'Вы дейтсительно хотите удалить событие?'
-
+    editing_event: 'Редактирование события'
+    create_event: 'Создать событие'
+    new_event: 'Новое событие'
+  user:
+    change_profile: 'Изменть профиль'
+    edit_profile: 'Редактировать профиль'
+    change_password: 'Изменить пароль'
+    organized: 'Организовал'
+    no_events: 'Пользователь пока не организовал ни одного события'
+    reset_password: 'Сбрость пароль'
+    forgot_password: 'Забыли пароль?'
+    delete_user: 'Удалить аккаунт'
+    are_you_sure: 'Вы действительно хотите удалить аккаунт?'
+    leave_blank: 'Оставьте пустым если не хотите изменять пароль'
+    need_to_fill: 'Необходимо заполнить для приминения изминений'

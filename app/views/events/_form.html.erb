@@ -16,5 +16,6 @@
     <%= form.label :description, class: 'form-label' %>
     <%= form.text_area :description, class: 'form-control' %>
   </div>
-  <%= form.submit 'Сохранить', class: 'btn btn-primary' %> или <%= link_to 'вернуться', :back %>
+  <%= form.submit t('global.save'), class: 'btn btn-primary' %>
+  <%= link_to t('global.back'), :back, class: 'btn btn-secondary' %>
 <% end %>

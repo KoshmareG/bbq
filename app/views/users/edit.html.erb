@@ -1,17 +1,17 @@
 <div class="row">
   <div class="col-lg-4 col-md-6 col-12 offset-lg-4 offset-md-3">
-    <h1>Изменть профиль</h1>
+    <h1><%= t('user.change_profile') %></h1>
     <%= turbo_frame_tag 'user' do %>
       <%= render 'form', user: @user %>
     <% end %>
     <div class="mb-3">
       <div class="d-grid gap-2">
-        <%= link_to 'Изменить пароль', edit_user_registration_path, data: {turbo: false}, class: 'btn btn-primary mt-2' %>
+        <%= link_to t('user.change_password'), edit_user_registration_path, data: {turbo: false}, class: 'btn btn-primary mt-2' %>
       </div>
     </div>
     <div class="row">
       <div class="col-12 text-center">
-        <%= link_to 'Вернуться', :back, class: 'text-decoration-none' %>
+        <%= link_to t('global.back'), :back, class: 'text-decoration-none' %>
       </div>
     </div>
   </div>
