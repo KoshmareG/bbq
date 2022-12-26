@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: 'Ваши данные обновлены'
+      redirect_to user_path(@user), notice: I18n.t('controllers.users.updated')
     else
       render :edit
     end
