@@ -21,6 +21,10 @@ ru:
       deleted: 'Событие удалено'
     users:
       updated: 'Ваши данные обновлены'
+    comments:
+      created: 'Комментарий удален'
+      destroyed: 'Комментарий добавлен'
+      error: 'Ошибка с комментарием'
   app:
     name: 'Шашлыки'
   global:
