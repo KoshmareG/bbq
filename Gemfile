@@ -5,6 +5,7 @@ ruby '3.1.2'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise-i18n'
+gem 'font-awesome-rails'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'

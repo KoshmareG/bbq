@@ -3,19 +3,26 @@ class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: %i[destroy]
 
   def create
-    @subscription = Subscription.new(subscription_params)
+    @new_subscription = @event.subscriptions.build(subscription_params)
+    @new_subscription.user = current_user
 
-    if @subscription.save
-      redirect_to @subscription, notice: "Subscription was successfully created."
+    if @new_subscription.save
+      redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
     else
-      render :new
+      render 'events/show', alert: I18n.t('controllers.subscriptions.error')
     end
   end
 
   def destroy
-    @subscription.destroy
+    message = {notice: I18n.t('controllers.subscriptions.destroyed')}
 
-    redirect_to subscriptions_url, notice: "Subscription was successfully destroyed."
+    if current_user_can_edit?(@subscription)
+      @subscription.destroy
+    else
+      message = {alert: I18n.t('controllers.subscriptions.error')}
+    end
+
+    redirect_to @event, message
   end
 
   private
@@ -25,7 +32,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def set_subscription
-    @subscription = @event.subscription.find(params[:id])
+    @subscription = @event.subscriptions.find(params[:id])
   end
 
   def subscription_params

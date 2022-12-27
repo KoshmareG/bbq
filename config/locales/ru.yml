@@ -22,9 +22,13 @@ ru:
     users:
       updated: 'Ваши данные обновлены'
     comments:
-      created: 'Комментарий удален'
-      destroyed: 'Комментарий добавлен'
+      created: 'Комментарий добавлен'
+      destroyed: 'Комментарий удален'
       error: 'Ошибка с комментарием'
+    subscriptions:
+      created: 'Вы подписались на событие'
+      destroyed: 'Вы отписались'
+      error: 'Действие не выполнено'
   app:
     name: 'Шашлыки'
   global:

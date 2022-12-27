@@ -1,1 +1,16 @@
-
+<%= form_for [@event, comment], data: {turbo: false} do |form| %>
+  <%= render partial: 'partials/form_errors', locals: {model: comment} %>
+  <div class="mb-3">
+    <%= form.label :body %>
+    <%= form.text_area :body, class: 'form-control' %>
+  </div>
+  <% unless user_signed_in? %>
+    <div class="mb-3">
+      <%= form.label :user_name %>
+      <%= form.text_field :user_name, class: 'form-control' %>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= form.submit 'Отправить', class: 'btn btn-primary' %>
+  </div>
+<% end %>

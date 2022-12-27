@@ -10,7 +10,7 @@
     </span>
     <em><%= l comment.created_at, format: :long %></em>
     <% if current_user_can_edit?(comment) %>
-      <%= link_to fa_icon('trash'), event_comment_path(comment.event, comment), method: delete %>
+      <%= button_to fa_icon('trash'), event_comment_path(comment.event, comment), method: :delete, class: 'tr-btn' %>
     <% end %>
   </p>
 </div>
