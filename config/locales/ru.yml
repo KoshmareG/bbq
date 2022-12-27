@@ -18,6 +18,7 @@ ru:
         body: 'Комментарий'
         user_name: 'Имя'
       subscription:
+        user: 'Пользователь'
         user_name: 'Имя'
         user_email: 'Email'
   controllers:
@@ -75,6 +76,7 @@ ru:
   subscriptions:
     subscribe: 'Подписаться'
     are_you_sure: 'Отменить подписку на событие?'
+    error: 'Подписка на себя невозможна'
   comments:
     send: 'Отправить'
     are_you_sure: 'Удалить комментарий?'

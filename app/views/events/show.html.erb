@@ -50,12 +50,16 @@
         </div>
       </div>
     <% end %>
-    <div class="event-subscription-form">
-      <h4><%= t('event.i_will_go') %></h4>
-      <div>
-        <%= render partial: 'subscriptions/form', locals: {subscription: @new_subscription || @event.subscriptions.build} %>
+    <% unless @event.user == current_user || @event.subscribers.include?(current_user) %>
+      <div class="event-subscription-form">
+        <h4><%= t('event.i_will_go') %></h4>
+        <div>
+          <%= render partial: 'subscriptions/form', locals: {subscription: @new_subscription || @event.subscriptions.build} %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
-<%= render 'events/delete_event', event: @event %>
+<% if current_user_can_edit?(@event) %>
+  <%= render 'events/delete_event', event: @event %>
+<% end %>
