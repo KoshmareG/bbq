@@ -1,0 +1,27 @@
+<p>
+  <span>
+    <% if subscription.user.present? %>
+      <%= render partial: 'users/user', object: subscription.user %>
+    <% else %>
+      <strong><%= subscription.user_name %></strong>
+    <% end %>
+    <% if current_user_can_edit?(subscription) %>
+      <button type="button" class="tr-btn" data-bs-toggle="modal" data-bs-target="#subscription_<%= subscription.id %>">
+        <%= fa_icon('times') %>
+      </button>
+      <div class="modal fade" id="subscription_<%= subscription.id %>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <%= t('subscriptions.are_you_sure') %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal"><%= t('global.cancel') %></button>
+              <%= button_to t('global.delete'), event_subscription_path(subscription.event, subscription), method: :delete, class: 'btn btn-sm btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </span>
+</p>

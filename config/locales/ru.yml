@@ -14,6 +14,13 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+      comment:
+        body: 'Комментарий'
+        user_name: 'Имя'
+      subscription:
+        user: 'Пользователь'
+        user_name: 'Имя'
+        user_email: 'Email'
   controllers:
     events:
       created: 'Событие создано'
@@ -21,6 +28,14 @@ ru:
       deleted: 'Событие удалено'
     users:
       updated: 'Ваши данные обновлены'
+    comments:
+      created: 'Комментарий добавлен'
+      destroyed: 'Комментарий удален'
+      error: 'Ошибка с комментарием'
+    subscriptions:
+      created: 'Вы подписались на событие'
+      destroyed: 'Вы отписались'
+      error: 'Действие не выполнено'
   app:
     name: 'Шашлыки'
   global:
@@ -43,6 +58,9 @@ ru:
     editing_event: 'Редактирование события'
     create_event: 'Создать событие'
     new_event: 'Новое событие'
+    invite: 'Зовет'
+    goes: 'Пойдут'
+    i_will_go: 'Я пойду'
   user:
     change_profile: 'Изменть профиль'
     edit_profile: 'Редактировать профиль'
@@ -55,3 +73,10 @@ ru:
     are_you_sure: 'Вы действительно хотите удалить аккаунт?'
     leave_blank: 'Оставьте пустым если не хотите изменять пароль'
     need_to_fill: 'Необходимо заполнить для приминения изминений'
+  subscriptions:
+    subscribe: 'Подписаться'
+    are_you_sure: 'Отменить подписку на событие?'
+    error: 'Подписка на себя невозможна'
+  comments:
+    send: 'Отправить'
+    are_you_sure: 'Удалить комментарий?'

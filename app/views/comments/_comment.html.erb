@@ -1,0 +1,33 @@
+<div class="card mb-3">
+  <div class="card-body pt-2 pb-2">
+    <p class="card-text"><%= comment.body %></p>
+  </div>
+  <div class="card-footer">
+    <span>
+      <% if comment.user.present? %>
+        <%= render partial: 'users/user', object: comment.user %>
+      <% else %>
+        <strong><%= comment.user_name %></strong>
+      <% end %>
+    </span>
+    <em><%= l comment.created_at, format: :long %></em>
+    <% if current_user_can_edit?(comment) %>
+      <button type="button" class="tr-btn" data-bs-toggle="modal" data-bs-target="#comment_<%= comment.id %>">
+        <%= fa_icon('trash') %>
+      </button>
+      <div class="modal fade" id="comment_<%= comment.id %>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <%= t('comments.are_you_sure') %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal"><%= t('global.cancel') %></button>
+              <%= button_to t('global.delete'), event_comment_path(comment.event, comment), method: :delete, class: 'btn btn-sm btn-danger' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
