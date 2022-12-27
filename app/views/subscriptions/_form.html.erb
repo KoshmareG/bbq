@@ -1,16 +1,16 @@
-<%= form_for [@event, subscription], data: {turbo: false} do |form| %>
+<%= form_with model: [@event, subscription], data: {turbo: false} do |form| %>
   <%= render partial: 'partials/form_errors', locals: {model: subscription} %>
   <% unless user_signed_in? %>
     <div class="mb-3">
-      <%= form.label :user_name %>
+      <%= form.label :user_name, class: 'form-label' %>
       <%= form.text_field :user_name, class: 'form-control' %>
     </div>
     <div class="mb-3">
-      <%= form.label :user_email %>
+      <%= form.label :user_email, class: 'form-label' %>
       <%= form.text_field :user_email, class: 'form-control' %>
     </div>
   <% end %>
   <div class="actions">
-    <%= form.submit 'Подписаться', class: 'btn btn-primary' %>
+    <%= form.submit t('subscriptions.subscribe'), class: 'btn btn-primary' %>
   </div>
 <% end %>

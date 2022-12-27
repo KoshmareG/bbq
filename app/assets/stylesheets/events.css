@@ -60,10 +60,14 @@
 }
 
 /* Avatars for users & events */
-.img-icon, .img-icon-small {
+.img-icon {
   height: 50px;
   width: auto;
   border-radius: 50%;
+}
+
+.img-icon-small {
+  height: 30px;
 }
 
 /* Thumbnails for events/index */

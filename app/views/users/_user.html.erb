@@ -1,12 +1,12 @@
 <span class="user">
   <span class="user-avatar">
-    <%= image_tag user_avatar(user), class: 'img-icon' %>
+    <%= image_tag user_avatar(user), class: 'img-icon img-icon-small' %>
   </span>
-  <span class="user-name">
+  <span class="fw-bold">
     <% if request.path == user_path(user) %>
       <%= user.name %>
     <% else %>
-      <%= link_to user.name, user_path(user) %>
+      <%= link_to user.name, user_path(user), class: 'text-decoration-none' %>
     <% end %>
   </span>
 </span>
