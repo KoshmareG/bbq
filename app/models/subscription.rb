@@ -20,8 +20,7 @@ class Subscription < ApplicationRecord
   private
 
   def not_self_subscription
-    if event.user == user || event.user.email == user_email
-      errors.add(:user, :invalid, message: I18n.t('subscriptions.error'))
-    end
+    errors.add(:user, :taken, message: I18n.t('subscriptions.error')) if event.user == user ||
+      event.user.email == user_email
   end
 end

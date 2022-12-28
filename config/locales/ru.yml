@@ -76,7 +76,7 @@ ru:
   subscriptions:
     subscribe: 'Подписаться'
     are_you_sure: 'Отменить подписку на событие?'
-    error: 'Подписка на себя невозможна'
+    error: 'уже идет на это событие'
   comments:
     send: 'Отправить'
     are_you_sure: 'Удалить комментарий?'
