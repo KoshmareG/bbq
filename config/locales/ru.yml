@@ -22,6 +22,8 @@ ru:
         user: 'Пользователь'
         user_name: 'Имя'
         user_email: 'Email'
+      photo:
+        photo: 'Фото'
   controllers:
     events:
       created: 'Событие создано'
@@ -37,6 +39,10 @@ ru:
       created: 'Вы подписались на событие'
       destroyed: 'Вы отписались'
       error: 'Действие не выполнено'
+    photos:
+      created: 'Фотография добавлена'
+      deleted: 'Фотография удалена'
+      error: 'Ошибка. Что-то пошло не так'
   app:
     name: 'Шашлыки'
   global:
@@ -48,6 +54,7 @@ ru:
     sign_in: 'Вход'
     sign_out: 'Выйти'
     profile: 'Профиль'
+    download: 'Загрузить'
     registration: 'Регистрация'
   errors:
     one: '%{count} ошибка'

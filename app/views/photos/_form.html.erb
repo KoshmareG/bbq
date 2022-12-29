@@ -1,0 +1,10 @@
+<%= form_with model: [@event, photo], html: { multipart: true }, data: {turbo: false} do |form| %>
+  <%= render partial: 'partials/form_errors', locals: {model: photo} %>
+  <div class="mb-3">
+    <%= form.label :photo, class: 'form-label' %>
+    <%= form.file_field :photo, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= form.submit t('global.download'), class: 'btn btn-primary' %>
+  </div>
+<% end %>
