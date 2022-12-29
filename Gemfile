@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 gem 'bootsnap', require: false
+gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
 gem 'devise'
 gem 'devise-i18n'
 gem 'font-awesome-rails'
@@ -13,6 +14,7 @@ gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4'
 gem 'rails-i18n'
 gem 'redis', '~> 4.0'
+gem 'rmagick'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'

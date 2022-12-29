@@ -8,6 +8,7 @@ ru:
         email: 'Email'
         name: 'Имя'
         password: 'Пароль'
+        avatar: 'Аватар'
         password_confirmation: 'Подтверждение пароля'
       event:
         title: 'Название'
