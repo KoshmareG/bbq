@@ -1,4 +1,6 @@
 class Photo < ApplicationRecord
+  scope :persisted, -> { where 'id IS NOT NULL' }
+
   belongs_to :event
   belongs_to :user
 
@@ -6,5 +8,5 @@ class Photo < ApplicationRecord
     attachable.variant :thumb, resize_to_fill: [140, 140]
   end
 
-  scope :persisted, -> { where "id IS NOT NULL" }
+  validates :photo, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
 end
