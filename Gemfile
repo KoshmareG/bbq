@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
+gem 'aws-sdk-s3'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise-i18n'
@@ -26,4 +27,3 @@ end
 group :development do
   gem 'web-console'
 end
-
