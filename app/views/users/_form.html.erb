@@ -10,7 +10,7 @@
   </div>
   <div class="mb-3">
     <%= form.label :avatar, class: 'form-label' %>
-    <p><%= image_tag(@user.avatar.thumb.url, class: 'img-icon') if @user.avatar? %></p>
+    <p><%= image_tag(user_avatar_thumb(user), class: 'img-icon') if @user.avatar? %></p>
     <%= form.file_field :avatar, class: 'form-control' %>
   </div>
   <div class="mb-3">

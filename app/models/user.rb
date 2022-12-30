@@ -1,21 +1,19 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable
 
   has_many :events
   has_many :comments
   has_many :subscriptions
 
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize_to_fill: [100, 100]
+  end
+
   validates :name, presence: true, length: { maximum: 35 }
 
   before_validation :set_name, on: :create
   after_commit :link_subscriptions, on: :create
-
-  mount_uploader :avatar, AvatarUploader
 
   private
 

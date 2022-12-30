@@ -1,6 +1,6 @@
 <div class="col">
   <figure class="figure">
-    <%= link_to image_tag(photo.photo.thumb.url, class: 'figure-img img-fluid rounded'), photo.photo.url %>
+    <%= link_to image_tag(photo.photo, class: 'figure-img img-fluid rounded'), url_for(photo.photo) %>
     <figcaption class="figure-caption text-start">
       <%= render partial: 'users/user', object: photo.user %>
     </figcaption>

@@ -3,10 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 gem 'bootsnap', require: false
-gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
 gem 'devise'
 gem 'devise-i18n'
 gem 'font-awesome-rails'
+gem "image_processing", ">= 1.2"
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'
