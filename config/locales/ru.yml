@@ -81,6 +81,7 @@ ru:
     are_you_sure: 'Вы действительно хотите удалить аккаунт?'
     leave_blank: 'Оставьте пустым если не хотите изменять пароль'
     need_to_fill: 'Необходимо заполнить для приминения изминений'
+    new_password: 'Новый пароль'
   subscriptions:
     subscribe: 'Подписаться'
     are_you_sure: 'Отменить подписку на событие?'
@@ -88,3 +89,18 @@ ru:
   comments:
     send: 'Отправить'
     are_you_sure: 'Удалить комментарий?'
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'

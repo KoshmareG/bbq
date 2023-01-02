@@ -11,7 +11,7 @@ class User < ApplicationRecord
   end
 
   validates :name, presence: true, length: { maximum: 35 }
-  validates :avatar, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
+  validates :avatar, content_type: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
 
   before_validation :set_name, on: :create
   after_commit :link_subscriptions, on: :create

@@ -26,6 +26,8 @@ class Subscription < ApplicationRecord
   end
 
   def email_uniqueness
-    errors.add(:user, :taken) unless User.find_by(email: user_email).nil?
+    unless user.present?
+      errors.add(:user, :taken) unless User.find_by(email: user_email).nil?
+    end
   end
 end
