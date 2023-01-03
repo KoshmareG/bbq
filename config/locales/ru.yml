@@ -96,6 +96,7 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+      new_comment: 'Новый комментарий в'
     subscription:
       title: 'Новая подписка'
       name: 'Имя'
@@ -104,3 +105,8 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+      new_subscription: 'Новая подписка на'
+    photo:
+      title: 'Новое фото'
+      event: 'Событие'
+      added: 'Добавил'

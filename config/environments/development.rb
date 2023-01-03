@@ -78,8 +78,8 @@ Rails.application.configure do
     address:              'smtp.mail.ru',
     port:                 '465',
     domain:               'mail.ru',
-    user_name:            Rails.application.credentials.mailbox[:email],
-    password:             Rails.application.credentials.mailbox[:password],
+    user_name:            ENV['MAILBOX_EMAIL'],
+    password:             ENV['MAILBOX_PASSWORD'],
     authentication:       :plain,
     enable_starttls_auto: true,
     tls:                  true,
@@ -87,3 +87,5 @@ Rails.application.configure do
     read_timeout:         5
   }
 end
+
+Rails.application.routes.default_url_options[:host] = ENV['DEFAULT_URL']
