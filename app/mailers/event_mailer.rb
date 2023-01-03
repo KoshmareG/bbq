@@ -17,10 +17,6 @@ class EventMailer < ApplicationMailer
   def photo(event, photo, email)
     @event = event
     @photo = photo
-    @photo_url =
-      Rails.application.routes.url_helpers.rails_blob_url(
-        photo.photo.variant(resize_to_fit: [500, 500])
-      )
 
     mail to: email, subject: "Новое фото в #{event.title}"
   end

@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: Rails.application.credentials.mailbox[:email]
+  default from: ENV['MAILBOX_EMAIL']
   layout "mailer"
 end

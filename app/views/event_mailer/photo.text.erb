@@ -5,4 +5,4 @@
 <%= t('.added') %>: <%= @photo.user %>
 
 --------------------
-<img src="<%= @photo_url %>" alt="new_photo">
+<%= image_tag(@photo.photo.variant(:mail)) %>

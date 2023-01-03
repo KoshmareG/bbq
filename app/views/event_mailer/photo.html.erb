@@ -3,4 +3,4 @@
 <h3><%= @event.title %></h3>
 <%= t('.added') %>
 <h3><%= @photo.user.name %></h3>
-<img src="<%= @photo_url %>" alt="new_photo">
+<%= image_tag(@photo.photo.variant(:mail)) %>
