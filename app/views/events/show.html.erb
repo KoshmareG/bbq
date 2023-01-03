@@ -33,7 +33,9 @@
         <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
       </div>
     </div>
-    <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+    <% if user_signed_in? %>
+      <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+    <% end %>
     <div class="mt-3">
         <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
         <div class="mt-3 mb-3">

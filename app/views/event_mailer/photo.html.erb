@@ -1,6 +1,21 @@
-<h1><%= t('.title') %></h1>
-<%= t('.event') %>
-<h3><%= @event.title %></h3>
-<%= t('.added') %>
-<h3><%= @photo.user.name %></h3>
-<%= image_tag(@photo.photo.variant(:mail)) %>
+<table width="100%" height="100%">
+  <tr>
+    <td align="center">
+      <table style="margin:0; padding:0; color:#212529;" width="450px">
+        <tbody>
+          <tr>
+            <td height="100%">
+              <div style="border:solid 1px #e9ecef;border-radius: 10px;padding:20px 20px;">
+                <h1><%= t('.title') %></h1>
+                <h3><%= t('.event') %> "<%= @event.title %>"</h3>
+                <p><%= @photo.user.name %>: <%= t('.added') %></p>
+                <p style="text-align:center;"><%= image_tag(@photo.photo.variant(:mail), style: 'border-radius: 10px;') %></p>
+                <h2 style="text-align:center;"><%= link_to t('.to_event'), event_url(@event.id) %></h2>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>

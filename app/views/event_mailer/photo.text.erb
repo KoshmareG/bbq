@@ -1,8 +1,10 @@
 <%= t('.title') %>
 ----
 
-<%= t('.event') %>: <%= @event.title %>
-<%= t('.added') %>: <%= @photo.user %>
+<%= t('.event') %> "<%= @event.title %>"
 
 --------------------
-<%= image_tag(@photo.photo.variant(:mail)) %>
+<%= @photo.user.name %>: <%= t('.added') %>
+<%= image_tag(@photo.photo.variant(:mail), style: 'border-radius: 10px;') %>
+
+<%= link_to t('.to_event'), event_url(@event.id) %>
