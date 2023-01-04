@@ -1,3 +1,4 @@
+<%= t('app.name') %>
 <%= t('.title') %>
 ----
 
@@ -6,6 +7,5 @@
 <%= t('.author') %>: <%= @comment.user_name %>
 
 --------------------
-<%= t('.event') %>: <%= @event.title %>
-<%= t('.datetime') %>: <%= l @event.datetime %>
-<%= t('.owner') %>: <%= @event.user.name %>
+<%= t('.event') %> "<%= @event.title %>"
+<%= t('.datetime') %>: <%= l @event.datetime, format: :long %>
