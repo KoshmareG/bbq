@@ -10,8 +10,13 @@ class Event < ApplicationRecord
   validates :address, presence: true
   validates :datetime, presence: true
   validates :description, presence: true
+  validates :pincode, numericality: { only_integer: true }, length: { in: 4..6 }
 
   def visitors
     subscribers + [user]
+  end
+
+  def pincode_valid?(user_pincode)
+    pincode == user_pincode
   end
 end
