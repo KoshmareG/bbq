@@ -39,26 +39,6 @@
   background:rgba(0, 0, 0, 0.4);
 }
 
-.event-map {
-  margin: 20px 0;
-  width: 100%;
-  height: 400px;
-}
-
-/* Buffers */
-.buffer-top {
-  margin-top: 20px;
-}
-
-.buffer-bottom {
-  margin-bottom: 20px;
-}
-
-.buffer-both {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 /* Avatars for users & events */
 .img-icon {
   height: 50px;
@@ -101,5 +81,5 @@
 
 .map {
   width: 100%;
-  height: 15rem;
+  height: 100%;
 }
