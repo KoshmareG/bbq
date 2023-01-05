@@ -4,7 +4,7 @@
       style: "background-image: url(#{asset_path('event_thumb.jpg')})" %>
     <div class="thumbnail-inner event-info-inner">
       <div class="event-description">
-        <h3><%= link_to event.title, event_path(event) %></h3>
+        <h3><%= link_to event.title, event_path(event), data: {turbo: false} %></h3>
         <h3>
           <small><%= l event.datetime, format: :long %></small>
         </h3>

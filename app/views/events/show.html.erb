@@ -44,6 +44,7 @@
     </div>
   </div>
   <div class="col-md-4">
+    <div id="map" data-address="<%= @event.address %>" class="map"></div>
     <h4><%= t('event.invite') %></h4>
     <p><%= render partial: 'users/user', object: @event.user %></p>
     <% if @event.subscriptions.except(@new_subscription).any? %>

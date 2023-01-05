@@ -96,3 +96,10 @@
   background: transparent;
   border: none;
 }
+
+/* Map */
+
+.map {
+  width: 100%;
+  height: 15rem;
+}
