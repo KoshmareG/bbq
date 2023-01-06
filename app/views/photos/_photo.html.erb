@@ -1,9 +1,10 @@
 <div class="col">
   <figure class="figure">
-    <%= link_to image_tag(photo.photo.variant(:thumb), class: 'figure-img img-fluid rounded'), url_for(photo.photo),
-      data: {toggle: 'lightbox', gallery: 'example-gallery', title: image_title} %>
+    <%= link_to image_tag(photo.photo.variant(:thumb), class: 'figure-img img-fluid rounded mb-0'), url_for(photo.photo),
+      data: {toggle: 'lightbox', gallery: 'gallery'} %>
     <figcaption class="figure-caption text-start">
-      <%= render partial: 'users/user', object: photo.user %>
+      <%= link_to photo.user.name, user_path(photo.user), class: 'text-decoration-none' %>
+      <%= link_to fa_icon('times'), event_photo_path(photo.event, photo), data: {turbo_method: :delete}, class: 'tr-btn' %>
     </figcaption>
   </figure>
 </div>
