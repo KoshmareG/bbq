@@ -16,7 +16,7 @@ module ApplicationHelper
   end
 
   def event_photo(event)
-    photos = event.photos.persisted
+    photos = event.photos.includes(photo_attachment: :blob).persisted
 
     if photos.any?
       url_for(photos.sample.photo)

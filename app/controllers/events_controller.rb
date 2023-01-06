@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   before_action :set_current_user_event, only: %i[edit update destroy]
 
   def index
-    @events = Event.all
+    @events = Event.includes(:subscribers, user: :avatar_attachment).all
   end
 
   def show

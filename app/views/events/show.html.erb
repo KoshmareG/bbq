@@ -39,7 +39,7 @@
     <div class="mt-3">
         <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
         <div class="mt-3 mb-3">
-          <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
+          <%= render partial: 'comments/comment', collection: @event.comments.includes(:user).except(@new_comment) %>
       </div>
     </div>
   </div>
