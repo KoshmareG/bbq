@@ -1,6 +1,7 @@
 <div class="col">
   <figure class="figure">
-    <%= link_to image_tag(photo.photo.variant(:thumb), class: 'figure-img img-fluid rounded'), url_for(photo.photo) %>
+    <%= link_to image_tag(photo.photo.variant(:thumb), class: 'figure-img img-fluid rounded'), url_for(photo.photo),
+      data: {toggle: 'lightbox', gallery: 'example-gallery', title: image_title} %>
     <figcaption class="figure-caption text-start">
       <%= render partial: 'users/user', object: photo.user %>
     </figcaption>
