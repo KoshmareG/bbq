@@ -1,10 +1,12 @@
 <div class="col">
-  <figure class="figure">
+  <figure class="figure mb-1">
     <%= link_to image_tag(photo.photo.variant(:thumb), class: 'figure-img img-fluid rounded mb-0'), url_for(photo.photo),
       data: {toggle: 'lightbox', gallery: 'gallery'} %>
     <figcaption class="figure-caption text-start">
       <%= link_to photo.user.name, user_path(photo.user), class: 'text-decoration-none' %>
-      <%= link_to fa_icon('times'), event_photo_path(photo.event, photo), data: {turbo_method: :delete}, class: 'tr-btn' %>
+      <% if current_user_can_edit?(photo) %>
+        <%= link_to fa_icon('times'), event_photo_path(photo.event, photo), data: {turbo_method: :delete}, class: 'tr-btn' %>
+      <% end %>
     </figcaption>
   </figure>
 </div>
