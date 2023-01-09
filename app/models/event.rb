@@ -10,7 +10,7 @@ class Event < ApplicationRecord
   validates :address, presence: true
   validates :datetime, presence: true
   validates :description, presence: true
-  validates :pincode, numericality: { only_integer: true }, length: { in: 4..6 }, if: :blank?
+  validates :pincode, numericality: { only_integer: true }, length: { in: 4..6 }, allow_blank: true
 
   def visitors
     subscribers + [user]

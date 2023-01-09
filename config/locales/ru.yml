@@ -93,6 +93,8 @@ ru:
   comments:
     send: 'Отправить'
     are_you_sure: 'Удалить комментарий?'
+  photo:
+    are_you_sure: 'Удалить фотографию?'
   event_mailer:
     comment:
       title: 'Новый комментарий'
