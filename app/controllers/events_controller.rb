@@ -4,12 +4,13 @@ class EventsController < ApplicationController
   before_action :set_current_user_event, only: %i[edit update destroy]
 
   def index
-    @events = Event.all
+    @events = Event.includes(:subscribers, user: :avatar_attachment).all
   end
 
   def show
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
+    @new_photo = @event.photos.build(params[:photo])
   end
 
   def new

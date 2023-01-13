@@ -1,0 +1,23 @@
+<table width="100%" height="100%" style="background-color:#f8f9fa;">
+  <tr>
+    <td align="center">
+      <table style="margin:0;padding:0;color:#212529;" width="450px">
+        <tbody>
+          <tr>
+            <td height="100%">
+              <div style="background-color:#fff;border:solid 1px #dee2e6;border-radius: 10px;padding:5px 20px;">
+                <h1 style="text-align:right;"><%= t('app.name') %></h1>
+                <h1><%= t('.title') %></h1>
+                <h3><%= @comment.body %></h3>
+                <p><%= t('.author') %>: <%= @comment.user_name %></p>
+                <p><%= t('.event') %> "<%= @event.title %>"</p>
+                <p><%= t('.datetime') %>: <%= l @event.datetime, format: :long %></p>
+                <h2 style="text-align:center;"><%= link_to t('.to_event'), event_url(@event.id) %></h2>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>

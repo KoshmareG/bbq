@@ -1,0 +1,8 @@
+<div class="col">
+  <figure class="figure">
+    <%= link_to image_tag(photo.photo.variant(:thumb), class: 'figure-img img-fluid rounded'), url_for(photo.photo) %>
+    <figcaption class="figure-caption text-start">
+      <%= render partial: 'users/user', object: photo.user %>
+    </figcaption>
+  </figure>
+</div>

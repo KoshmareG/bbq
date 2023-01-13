@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: bbq_production
-  username: <%= Rails.application.credentials.dig(:database_username) %>
-  password: <%= Rails.application.credentials.dig(:database_password) %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>

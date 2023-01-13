@@ -8,6 +8,7 @@ ru:
         email: 'Email'
         name: 'Имя'
         password: 'Пароль'
+        avatar: 'Аватар'
         password_confirmation: 'Подтверждение пароля'
       event:
         title: 'Название'
@@ -21,6 +22,8 @@ ru:
         user: 'Пользователь'
         user_name: 'Имя'
         user_email: 'Email'
+      photo:
+        photo: 'Фото'
   controllers:
     events:
       created: 'Событие создано'
@@ -36,6 +39,10 @@ ru:
       created: 'Вы подписались на событие'
       destroyed: 'Вы отписались'
       error: 'Действие не выполнено'
+    photos:
+      created: 'Фотография добавлена'
+      deleted: 'Фотография удалена'
+      error: 'Ошибка. Что-то пошло не так'
   app:
     name: 'Шашлыки'
   global:
@@ -47,6 +54,7 @@ ru:
     sign_in: 'Вход'
     sign_out: 'Выйти'
     profile: 'Профиль'
+    download: 'Загрузить'
     registration: 'Регистрация'
   errors:
     one: '%{count} ошибка'
@@ -73,6 +81,7 @@ ru:
     are_you_sure: 'Вы действительно хотите удалить аккаунт?'
     leave_blank: 'Оставьте пустым если не хотите изменять пароль'
     need_to_fill: 'Необходимо заполнить для приминения изминений'
+    new_password: 'Новый пароль'
   subscriptions:
     subscribe: 'Подписаться'
     are_you_sure: 'Отменить подписку на событие?'
@@ -80,3 +89,27 @@ ru:
   comments:
     send: 'Отправить'
     are_you_sure: 'Удалить комментарий?'
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      new_comment: 'Новый комментарий в событии'
+      to_event: 'Посмотреть на сайте'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+      new_subscription: 'Новая подписка на событие'
+      to_event: 'Посмотреть на сайте'
+    photo:
+      title: 'Новое фото'
+      event: 'Событие'
+      added: 'Добавил'
+      new_photo: 'Новое фото в событии'
+      to_event: 'Посмотреть на сайте'
