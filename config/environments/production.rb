@@ -93,7 +93,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
 
-  config.action_mailer.default_url_options = { host: ENV['DEFAULT_URL'] }
+  config.action_mailer.default_url_options = { host: Rails.application.credentials.host }
 
   config.action_mailer.delivery_method = :smtp
 
