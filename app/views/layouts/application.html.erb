@@ -3,7 +3,7 @@
   <head>
     <title><%= t('app.name') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<%= ENV['YA_API_KEY'] %>" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<%= Rails.application.credentials.ya_api_key %>" type="text/javascript"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
