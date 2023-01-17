@@ -15,6 +15,7 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+        pincode: 'Пинкод'
       comment:
         body: 'Комментарий'
         user_name: 'Имя'
@@ -29,6 +30,7 @@ ru:
       created: 'Событие создано'
       updated: 'Событие изменено'
       deleted: 'Событие удалено'
+      wrong_pincode: 'Неверный пинкод'
     users:
       updated: 'Ваши данные обновлены'
     comments:
@@ -69,6 +71,8 @@ ru:
     invite: 'Зовет'
     goes: 'Пойдут'
     i_will_go: 'Я пойду'
+    private_event: 'Приватное событие'
+    need_to_fill: 'Оставьте пустым для открытого события. Для приватного: 4-6 цифр'
   user:
     change_profile: 'Изменть профиль'
     edit_profile: 'Редактировать профиль'
@@ -89,6 +93,8 @@ ru:
   comments:
     send: 'Отправить'
     are_you_sure: 'Удалить комментарий?'
+  photo:
+    are_you_sure: 'Удалить фотографию?'
   event_mailer:
     comment:
       title: 'Новый комментарий'
