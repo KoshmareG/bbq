@@ -43,6 +43,9 @@
       <% if flash[:notice].present? %>
         <%= render partial: 'partials/notice' %>
       <% end %>
+      <% if flash[:alert].present? %>
+        <%= render partial: 'partials/alert' %>
+      <% end %>
       <%= yield %>
     </div>
   </body>

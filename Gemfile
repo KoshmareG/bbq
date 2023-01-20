@@ -13,6 +13,7 @@ gem 'importmap-rails'
 gem 'jbuilder'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
+gem 'pundit', '~> 2.3'
 gem 'rails', '~> 7.0.4'
 gem 'rails-i18n'
 gem 'redis', '~> 4.0'
@@ -25,6 +26,9 @@ group :development, :test do
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
   gem 'dotenv-rails'
   gem 'bullet'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
+  gem 'shoulda-matchers', '~> 5.3'
 end
 
 group :development do

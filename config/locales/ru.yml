@@ -119,3 +119,5 @@ ru:
       added: 'Добавил'
       new_photo: 'Новое фото в событии'
       to_event: 'Посмотреть на сайте'
+  pundit:
+    not_authorized: 'Доступ запрещен'
