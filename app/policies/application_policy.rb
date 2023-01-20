@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 class ApplicationPolicy
-  attr_reader :user, :record
+  attr_reader :context, :user, :cookies, :record
 
   def initialize(context, record)
-    @user = context.user
-    @cookies = context.cookies
+    @context = context
     @record = record
   end
+
+  delegate :user, to: :context
+  delegate :cookies, to: :context
 
   def index?
     false
