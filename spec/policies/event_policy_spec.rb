@@ -7,6 +7,7 @@ describe EventPolicy do
 
   permissions :edit?, :update?, :destroy? do
     it 'allow access for event owner' do
+      sign_in user
       expect(subject).to permit(user, Event.new(user: user))
     end
 

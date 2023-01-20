@@ -1,6 +1,6 @@
 class EventPolicy < ApplicationPolicy
   def show?
-    pincode_correct?(record)
+    edit? || pincode_correct?(record)
   end
 
   def edit?
@@ -22,7 +22,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def pincode_correct?(event)
-    return true if event.pincode.blank? || user == event.user
+    return true if event.pincode.blank?
 
     event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"])
   end
