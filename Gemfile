@@ -7,10 +7,10 @@ gem 'aws-sdk-s3'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise-i18n'
-gem 'font-awesome-rails'
 gem "image_processing", ">= 1.2"
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.4'
@@ -30,3 +30,5 @@ end
 group :development do
   gem 'web-console'
 end
+
+gem "cssbundling-rails", "~> 1.1"

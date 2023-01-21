@@ -13,7 +13,7 @@
     <em><%= l comment.created_at, format: :long %></em>
     <% if current_user_can_edit?(comment) %>
       <button type="button" class="tr-btn" data-bs-toggle="modal" data-bs-target="#comment_<%= comment.id %>">
-        <%= fa_icon('trash') %>
+        <i class="bi bi-trash3"></i>
       </button>
       <div class="modal fade" id="comment_<%= comment.id %>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog">

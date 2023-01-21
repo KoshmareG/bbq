@@ -97,6 +97,8 @@ GEM
       uniform_notifier (~> 1.11)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    cssbundling-rails (1.1.2)
+      railties (>= 6.0.0)
     date (3.3.3)
     debug (1.7.1)
       irb (>= 1.5.0)
@@ -115,8 +117,6 @@ GEM
       railties (>= 3.2)
     erubi (1.12.0)
     ffi (1.15.5)
-    font-awesome-rails (4.7.0.8)
-      railties (>= 3.2, < 8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -134,6 +134,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jmespath (1.6.2)
+    jsbundling-rails (1.1.1)
+      railties (>= 6.0.0)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -247,14 +249,15 @@ DEPENDENCIES
   aws-sdk-s3
   bootsnap
   bullet
+  cssbundling-rails (~> 1.1)
   debug
   devise
   devise-i18n
   dotenv-rails
-  font-awesome-rails
   image_processing (>= 1.2)
   importmap-rails
   jbuilder
+  jsbundling-rails
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4)

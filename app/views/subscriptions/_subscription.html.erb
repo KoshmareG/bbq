@@ -7,7 +7,7 @@
     <% end %>
     <% if current_user_can_edit?(subscription) %>
       <button type="button" class="tr-btn" data-bs-toggle="modal" data-bs-target="#subscription_<%= subscription.id %>">
-        <%= fa_icon('times') %>
+        <i class="bi bi-trash3"></i>
       </button>
       <div class="modal fade" id="subscription_<%= subscription.id %>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog">

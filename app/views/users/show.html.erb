@@ -1,6 +1,6 @@
 <div class="text-center">
-  <h1><%= @user.name %></h1>
-  <div class="row justify-content-center">
+  <h1 class="mb-3"><%= @user.name %></h1>
+  <div class="row justify-content-center mb-4">
     <div class="col-lg-2 col-md-4 col-6">
       <%= image_tag user_avatar(@user), class: 'img-fluid rounded-circle' %>
     </div>
@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-md-12">
       <% if @user.events.any? %>
-        <h3><%= t('user.organized') %></h3>
+        <h3 class="mb-3"><%= t('user.organized') %></h3>
         <div class="row">
           <%= render @user.events %>
         </div>

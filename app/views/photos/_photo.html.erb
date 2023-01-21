@@ -6,7 +6,7 @@
       <%= link_to photo.user.name, user_path(photo.user), class: 'text-decoration-none' %>
       <% if current_user_can_edit?(photo) %>
         <button type="button" class="tr-btn" data-bs-toggle="modal" data-bs-target="#photo_<%= photo.id %>">
-          <%= fa_icon('times') %>
+          <i class="bi bi-trash3"></i>
         </button>
       <% end %>
     </figcaption>
