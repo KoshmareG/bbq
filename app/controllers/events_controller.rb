@@ -15,7 +15,7 @@ class EventsController < ApplicationController
 
     authorize @event
 
-    rescue Pundit::NotAuthorizedError
+  rescue Pundit::NotAuthorizedError
     pincode_form
 
     @new_comment = @event.comments.build(params[:comment])

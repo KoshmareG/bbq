@@ -24,6 +24,6 @@ class EventPolicy < ApplicationPolicy
   def pincode_correct?(event)
     return true if event.pincode.blank?
 
-    event.pincode_valid?(cookies.permanent["events_#{event.id}_pincode"])
+    event.pincode_valid?(cookies["events_#{event.id}_pincode"])
   end
 end
