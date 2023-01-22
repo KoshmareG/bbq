@@ -9,7 +9,8 @@
     "bs5-lightbox": "^1.8.2",
     "esbuild": "^0.17.3",
     "sass": "^1.57.1",
-    "stimulus": "^3.2.1"
+    "stimulus": "^3.2.1",
+    "stimulus-content-loader": "^4.1.0"
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
