@@ -5,9 +5,10 @@
 
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
-server 'railsapp.ru', user: 'deploy', roles: %w{app db web}
+server 'railsapp.ru', user: 'deploy', roles: %w{app db web resque_worker}
 
-
+set :resque_enviroment_task, true
+set :workers, { "#{fetch(:application)}*" => 1 }
 
 # role-based syntax
 # ==================
