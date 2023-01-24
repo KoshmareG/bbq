@@ -10,7 +10,7 @@ Rails.application.configure do
     Bullet.add_footer    = true
   end
 
-  config.active_job.queue_adapter = :async
+  config.active_job.queue_adapter = :resque
   config.active_job.queue_name_prefix = "bbq_#{Rails.env}"
 
   # Settings specified here will take precedence over those in config/application.rb.
@@ -80,7 +80,7 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  config.action_mailer.default_url_options = { host: ENV['DEFAULT_URL'] }
+  config.action_mailer.default_url_options = { host: Rails.application.credentials.host }
 
   config.action_mailer.delivery_method = :smtp
 
@@ -90,8 +90,8 @@ Rails.application.configure do
     address:              'smtp.mail.ru',
     port:                 '465',
     domain:               'mail.ru',
-    user_name:            ENV['MAILBOX_EMAIL'],
-    password:             ENV['MAILBOX_PASSWORD'],
+    user_name:            Rails.application.credentials.dig(:mailer, :email),
+    password:             Rails.application.credentials.dig(:mailer, :password),
     authentication:       :plain,
     enable_starttls_auto: true,
     tls:                  true,
@@ -100,4 +100,4 @@ Rails.application.configure do
   }
 end
 
-Rails.application.routes.default_url_options[:host] = ENV['DEFAULT_URL']
+Rails.application.routes.default_url_options[:host] = Rails.application.credentials.host
