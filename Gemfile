@@ -5,10 +5,10 @@ ruby '3.1.2'
 gem 'active_storage_validations'
 gem 'aws-sdk-s3'
 gem 'bootsnap', require: false
+gem 'cssbundling-rails', '~> 1.1'
 gem 'devise'
 gem 'devise-i18n'
 gem 'image_processing', '>= 1.2'
-gem 'importmap-rails'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'pg', '~> 1.1'
@@ -37,5 +37,3 @@ group :development do
   gem 'bcrypt_pbkdf', '~> 1.1.0'
   gem 'web-console'
 end
-
-gem 'cssbundling-rails', '~> 1.1'
