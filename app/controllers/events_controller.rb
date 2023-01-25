@@ -10,7 +10,7 @@ class EventsController < ApplicationController
 
   def show
     if params[:pincode].present? && @event.pincode_valid?(params[:pincode])
-      cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode] if params[:pincode].present?
+      cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
     end
 
     authorize @event
