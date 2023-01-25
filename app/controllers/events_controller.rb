@@ -2,10 +2,10 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_event, only: %i[show edit update destroy]
 
-  after_action :verify_authorized, only: %i[show edit update destroy]
+  after_action :verify_authorized, except: %i[index]
 
   def index
-    @events = Event.includes(:subscribers, user: :avatar_attachment).all
+    @events = policy_scope(Event).includes(:subscribers, user: :avatar_attachment).all
   end
 
   def show
@@ -25,6 +25,8 @@ class EventsController < ApplicationController
 
   def new
     @event = current_user.events.build
+
+    authorize @event
   end
 
   def edit
@@ -33,6 +35,8 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
+
+    authorize @event
 
     if @event.save
       redirect_to event_path(@event), notice: I18n.t('controllers.events.created')

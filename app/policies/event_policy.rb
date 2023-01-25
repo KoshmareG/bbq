@@ -3,6 +3,14 @@ class EventPolicy < ApplicationPolicy
     edit? || pincode_correct?(record)
   end
 
+  def new?
+    create?
+  end
+
+  def create?
+    user.present?
+  end
+
   def edit?
     user_is_owner?(record)
   end
@@ -13,6 +21,12 @@ class EventPolicy < ApplicationPolicy
 
   def destroy?
     edit?
+  end
+
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
   end
 
   private

@@ -54,4 +54,16 @@ describe EventPolicy do
       end
     end
   end
+
+  context 'user can create new event' do
+    permissions :new?, :create? do
+      it 'allow access' do
+        expect(subject).to permit(user_w_context, Event.new)
+      end
+
+      it 'forbids access' do
+        expect(subject).not_to permit(Event.new)
+      end
+    end
+  end
 end
