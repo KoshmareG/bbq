@@ -36,10 +36,19 @@
         <%= link_to t('user.forgot_password'), new_user_password_path, class: 'text-decoration-none' %>
       </div>
     </div>
+    <% if devise_mapping.omniauthable? %>
+      <div class="row mb-3">
+        <div class="col text-center">
+          <%= t('session.sign_in_with_help') %>
+        </div>
+      </div>
+      <div class="row justify-content-center text-center">
+        <% resource_class.omniauth_providers.each do |provider| %>
+          <div class="col">
+            <%= button_to image_tag(omniauth_icon(OmniAuth::Utils.camelize(provider))), omniauth_authorize_path(resource_name, provider), method: :post, data: { turbo: 'false' }, class: 'tr-btn' %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post, data: { turbo: 'false' } %>
-  <% end %>
-<% end %>

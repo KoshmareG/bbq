@@ -11,11 +11,29 @@ class User < ApplicationRecord
     attachable.variant :thumb, resize_to_fill: [100, 100]
   end
 
-  validates :name, presence: true, length: { maximum: 35 }
+  validates :name, presence: true, length: { maximum: 39 }
   validates :avatar, content_type: ['image/png', 'image/jpg', 'image/jpeg', 'image/gif']
 
+  before_validation :downcase_email
   before_validation :set_name, on: :create
   after_commit :link_subscriptions, on: :create
+
+  def self.find_for_github_oauth(access_token)
+    email = access_token.info.email.downcase
+    user = where(email: email).first
+
+    return user if user.present?
+
+    name = access_token.extra.raw_info.login
+    provider = access_token.provider
+    url = access_token.extra.raw_info.url
+
+    where(url: url, provider: provider).first_or_create! do |user|
+      user.email = email
+      user.name = name
+      user.password = Devise.friendly_token.first(16)
+    end
+  end
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
@@ -29,5 +47,9 @@ class User < ApplicationRecord
 
   def link_subscriptions
     Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
+  end
+
+  def downcase_email
+    email&.downcase!
   end
 end

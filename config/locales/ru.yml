@@ -121,3 +121,5 @@ ru:
       to_event: 'Посмотреть на сайте'
   pundit:
     not_authorized: 'Доступ запрещен'
+  session:
+    sign_in_with_help: 'Войти с помощью'

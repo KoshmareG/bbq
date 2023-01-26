@@ -34,4 +34,8 @@ module ApplicationHelper
       asset_path('event_thumb.jpg')
     end
   end
+
+  def omniauth_icon(provider)
+    asset_path("#{provider.downcase}_icon.png")
+  end
 end
