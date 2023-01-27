@@ -96,7 +96,20 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: Rails.application.credentials.host }
 
-  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.mail.ru',
+    port:                 '465',
+    domain:               'mail.ru',
+    user_name:            Rails.application.credentials.dig(:mailer, :email),
+    password:             Rails.application.credentials.dig(:mailer, :password),
+    authentication:       :plain,
+    enable_starttls_auto: true,
+    tls:                  true,
+    open_timeout:         5,
+    read_timeout:         5
+  }
 end
