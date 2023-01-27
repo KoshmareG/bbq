@@ -37,7 +37,7 @@
       </div>
     </div>
     <% if devise_mapping.omniauthable? %>
-      <div class="row mb-3">
+      <div class="row mt-3 mb-3">
         <div class="col text-center">
           <%= t('session.sign_in_with_help') %>
         </div>
@@ -45,7 +45,8 @@
       <div class="row justify-content-center text-center">
         <% resource_class.omniauth_providers.each do |provider| %>
           <div class="col">
-            <%= button_to image_tag(omniauth_icon(OmniAuth::Utils.camelize(provider))), omniauth_authorize_path(resource_name, provider), method: :post, data: { turbo: 'false' }, class: 'tr-btn' %>
+            <%= button_to image_tag(omniauth_icon(OmniAuth::Utils.camelize(provider)), size: "64x64", style: 'border-radius: 50%'),
+              omniauth_authorize_path(resource_name, provider), method: :post, data: { turbo: 'false' }, class: 'tr-btn' %>
           </div>
         <% end %>
       </div>
