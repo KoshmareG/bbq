@@ -274,6 +274,8 @@ Devise.setup do |config|
   config.omniauth :github, Rails.application.credentials.dig(:github_oauth, :github_key),
     Rails.application.credentials.dig(:github_oauth, :github_secret), scope: 'user,public_repo'
 
+  config.omniauth :yandex, Rails.application.credentials.dig(:yandex_oauth, :yandex_key),
+    Rails.application.credentials.dig(:yandex_oauth, :yandex_secret)
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

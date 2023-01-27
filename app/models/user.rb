@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:github]
+         :omniauthable, omniauth_providers: %i[github yandex]
 
   has_many :events
   has_many :comments
@@ -18,7 +18,7 @@ class User < ApplicationRecord
   before_validation :set_name, on: :create
   after_commit :link_subscriptions, on: :create
 
-  def self.find_for_github_oauth(access_token)
+  def self.find_for_oauth(access_token)
     email = access_token.info.email.downcase
     user = where(email: email).first
 
@@ -26,7 +26,11 @@ class User < ApplicationRecord
 
     name = access_token.extra.raw_info.login
     provider = access_token.provider
-    url = access_token.extra.raw_info.url
+    url =
+      case provider
+      when 'github' then access_token.extra.raw_info.url
+      when 'yandex' then access_token.extra.raw_info.id
+      end
 
     where(url: url, provider: provider).first_or_create! do |user|
       user.email = email

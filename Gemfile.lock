@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/evrone/omniauth-yandex.git
+  revision: 5d5ff691b4de148f5257728decf090c0ba999814
+  branch: dependabot/bundler/omniauth-2.1.0
+  specs:
+    omniauth-yandex (0.0.3)
+      omniauth (>= 1, < 3)
+      omniauth-oauth2 (~> 1.0)
+
+GIT
   remote: https://github.com/omniauth/omniauth-github.git
   revision: 0ac46b59ccdabd4cbe5be4a665df269355081915
   branch: master
@@ -413,6 +422,7 @@ DEPENDENCIES
   mailjet
   omniauth-github!
   omniauth-rails_csrf_protection
+  omniauth-yandex!
   pg (~> 1.1)
   puma (~> 5.0)
   pundit (~> 2.3)
