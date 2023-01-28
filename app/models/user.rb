@@ -26,16 +26,21 @@ class User < ApplicationRecord
 
     name = access_token.extra.raw_info.login
     provider = access_token.provider
-    url =
-      case provider
-      when 'github' then access_token.extra.raw_info.url
-      when 'yandex' then access_token.extra.raw_info.id
-      end
+
+    case
+    when provider == 'github'
+      avatar_url = access_token.extra.raw_info.avatar_url
+      url = access_token.extra.raw_info.url
+    when provider == 'yandex'
+      avatar_url = "https://avatars.mds.yandex.net/get-yapic/#{access_token.extra.raw_info.default_avatar_id}/islands-300"
+      url = access_token.extra.raw_info.id
+    end
 
     where(url: url, provider: provider).first_or_create! do |user|
       user.email = email
       user.name = name
       user.password = Devise.friendly_token.first(16)
+      user.avatar.attach(io: URI.open(avatar_url), filename: "#{name}_avatar") if avatar_url.present?
     end
   end
 

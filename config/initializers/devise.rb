@@ -272,7 +272,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   config.omniauth :github, Rails.application.credentials.dig(:github_oauth, :github_key),
-    Rails.application.credentials.dig(:github_oauth, :github_secret), scope: 'user,public_repo'
+    Rails.application.credentials.dig(:github_oauth, :github_secret), scope: 'user:email'
 
   config.omniauth :yandex, Rails.application.credentials.dig(:yandex_oauth, :yandex_key),
     Rails.application.credentials.dig(:yandex_oauth, :yandex_secret)
