@@ -1,24 +1,59 @@
-# README
+# BBQ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BBQ is an application that helps to organize events. Create your own event and gather people around you or go to someone else's event. Subscribe to the alert and don't miss anything important. Share your photos and impressions in the comments. If you have an event for your own only, you can protect it with a PIN code.
 
-Things you may want to cover:
+### Required to run the application
 
-* Ruby version
+`Ruby` and `Node` installed. `PostgreSQL` is used for data storage. A `Redis` database is also needed.
 
-* System dependencies
+Before launching, you need to configure `credentials.yml.enc`. To do this, delete the `config/credentials.yml.enc` file and run the command:
 
-* Configuration
+```
+$ EDITOR="vim" rails credentials:edit
+```
 
-* Database creation
+Next, you need to run the following commands:
 
-* Database initialization
+```
+$ bundle
+$ rails db:create
+$ rails db:migrate
+$ yarn build
+$ yarn build:css
+```
 
-* How to run the test suite
+Run app:
 
-* Services (job queues, cache servers, search engines, etc.)
+'''
+$ rails s
+```
 
-* Deployment instructions
+And visit `http://localhost:3000`.
 
-* ...
+### Additional features
+
+[Yandex API Key](https://yandex.ru/dev/maps/?p=realty) is required for the card to work. Put the key in `config/credentials.yml.enc`:
+
+```
+ya_api_key: your Yandex API Key here
+```
+
+If you want to be able to log in using [GitHub OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps) and [Yandex OAuth](https://yandex.ru/dev/id/doc/dg/oauth/concepts/about.html), you need to connect the application to the appropriate service. Then specify in `config/credentials.yml.enc`:
+
+```
+githun_oauth:
+  github_key: #Your GitHub application key
+  github_secret: #Your GitHub secret key
+
+yandex_oauth:
+  yandex_key: #Your Yandex application key
+  yandex_secret: #Your Yandex secret key
+```
+
+In the production environment, [Yandex Cloud](https://cloud.yandex.ru/) is used to store files. To configure it, add to `config/credentials.yml.enc`:
+
+```
+yc:
+  access_key_id: #Your Yandex Cloud access key
+  secret_access_key: #Your Yandex Cloud secret key
+```
