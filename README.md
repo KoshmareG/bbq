@@ -24,7 +24,7 @@ $ yarn build:css
 
 Run app:
 
-'''
+```
 $ rails s
 ```
 
