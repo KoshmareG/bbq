@@ -10,16 +10,16 @@
       <%= link_to t('user.edit_profile'), edit_user_path(@user), class: 'btn btn-primary' %>
     </p>
   <% end %>
-  <div class="row">
-    <div class="col-md-12">
-      <% if @user.events.any? %>
-        <h3 class="mb-3"><%= t('user.organized') %></h3>
-        <div class="row g-3">
-          <%= render @user.events %>
-        </div>
-      <% else %>
-        <p class="buffer-top"><%= t('user.no_events') %></p>
-      <% end %>
-    </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <% if @user.events.any? %>
+      <h3 class="mb-3 text-center"><%= t('user.organized') %></h3>
+      <div class="row g-3">
+        <%= render @user.events %>
+      </div>
+    <% else %>
+      <p class="buffer-top"><%= t('user.no_events') %></p>
+    <% end %>
   </div>
 </div>
