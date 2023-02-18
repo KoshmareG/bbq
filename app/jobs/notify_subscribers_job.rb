@@ -2,10 +2,8 @@ class NotifySubscribersJob < ApplicationJob
   queue_as :default
 
   def perform(record)
-    if record.class == Photo || record.class == Comment
-      all_emails =
-        (record.event.subscriptions.map(&:user_email) + [record.event.user.email] - [record.user&.email])
-    end
+    all_emails =
+      (record.event.subscriptions.map(&:user_email) + [record.event.user.email] - [record.user&.email])
 
     case record
     when Subscription
